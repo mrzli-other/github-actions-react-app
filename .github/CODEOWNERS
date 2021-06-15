@@ -1,4 +1,4 @@
 * @mrzli
 *.js @mrzli
-*.yml @mrzli17
+*.yml @mrzli
 /public/ @mrzli
