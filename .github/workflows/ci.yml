@@ -69,12 +69,13 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Open Issue
         if: failure() && github.event_name == 'pull_request'
+        # related to below command:
+        #   --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \ # same as with 'Create a Release' step
         run: |
           curl \
           --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/issues \
-          # --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \ # same as with 'Create a Release' step \
-          --header 'authorization: Bearer ${{ secrets.SEMANTIC_RELEASE_TOKEN }}' \ # secret's name does not fit into this really :)
+          --header 'authorization: Bearer ${{ secrets.SEMANTIC_RELEASE_TOKEN }}' \
           --header 'content-type: application/json' \
           --data '{
             "title": "Automated issue for commit: ${{ github.sha }}",
