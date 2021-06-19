@@ -1,0 +1,18 @@
+name: Hello World
+author: Goran Mržljak
+description: Some description
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: Goran
+outputs:
+  time:
+    description: 'The greeting time'
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  # entrypoint: # defined in Dockerfile, so no need here
+  args:
+    - ${{ inputs.who-to-greet }}
+
