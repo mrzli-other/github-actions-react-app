@@ -1,6 +1,8 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 
+// before committing changes in here, run:
+// npx ncc build .github/actions/hello/index.js -o .github/actions/hello/dist
 try {
   throw new Error("some error message");
   const name = core.getInput("who-to-greet");

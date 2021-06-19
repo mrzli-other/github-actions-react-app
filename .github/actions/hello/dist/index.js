@@ -617,8 +617,10 @@ module.exports = require("https");
 const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 
+// before committing changes in here, run:
+// npx ncc build .github/actions/hello/index.js -o .github/actions/hello/dist
 try {
-  // throw new Error("some error message");
+  throw new Error("some error message");
   const name = core.getInput("who-to-greet");
   console.log(`Hello ${name}`);
 
