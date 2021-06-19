@@ -54,7 +54,8 @@ jobs:
         env:
           # using GITHUB_TOKEN token means that release will be created by 'github-actions' user,
           #   this will not trigger a 'release' event and any workflows that depend on it will not run
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
       - name: Deploy to Staging
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: npx surge --project ./build --domain scintillating-process.surge.sh
