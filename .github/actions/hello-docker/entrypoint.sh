@@ -15,4 +15,5 @@ echo "some stuff"
 echo "some stuff"
 echo "::endgroup::"
 
-echo "::set-env name=HELLO::hello"
+# echo "::set-env name=HELLO::hello" # unsafe, errors unless ACTIONS_ALLOW_UNSECURE_COMMANDS env variable is set to 'true'
+echo "HELLO=hello" >> "$GITHUB_ENV"
