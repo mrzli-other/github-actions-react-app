@@ -1,0 +1,15 @@
+name: Hello WOrld
+author: Goran Mržljak
+description: Some description
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
+    default: Goran
+outputs:
+  time:
+    description: 'The greeting time'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
