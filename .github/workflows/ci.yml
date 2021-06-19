@@ -73,7 +73,7 @@ jobs:
           curl \
           --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/issues \
-          # --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \ # same as with 'Create a Release' step
+          # --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \ # same as with 'Create a Release' step \
           --header 'authorization: Bearer ${{ secrets.SEMANTIC_RELEASE_TOKEN }}' \ # secret's name does not fit into this really :)
           --header 'content-type: application/json' \
           --data '{
